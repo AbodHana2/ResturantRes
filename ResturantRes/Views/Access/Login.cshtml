@@ -1,0 +1,21 @@
+﻿@model User
+@{
+    Layout = null;
+}
+<form asp-controller="Access" asp-action="Login" method="post">
+    <h1>LogIn</h1>
+    <input type="email" placeholder="Email" asp-for="Email" />
+    <input type="password" placeholder="PassWord" asp-for="Password" />
+
+    <label>
+        <input type="checkbox" asp-for="KeepLoggedIn"/>
+        Keep me Logged In
+    </label>
+    <button type="submit">Login</button>
+
+    @if (ViewData["ValidateMessage"] != null)
+    {
+        <br />
+        <label>@ViewData["ValidateMessage"]</label>
+    }
+</form>

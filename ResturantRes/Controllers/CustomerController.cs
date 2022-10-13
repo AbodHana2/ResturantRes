@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using ResturantRes.Models;
 using ResturantReservation.Data;
 
 namespace ResturantRes.Controllers
 {
+    [Authorize]
     public class CustomerController : Controller
     {
         private readonly AppContextDb _db;
